@@ -27,6 +27,7 @@
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css">
 </head>
 
 <body>
@@ -90,6 +91,7 @@
                     <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>订单管理</span></a></li>
                     <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>商品管理</span></a></li>
                     <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>员工管理</span></a></li>
+                    <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>购物车管理</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -116,23 +118,9 @@
                                     <div class="col-lg-12">
                                         <div class="ibox float-e-margins">
                                             <div class="ibox-title">
-                                                <h5>用户管理</h5>
+                                                <p><a class="btn btn-primary btn-lg" href="#" role="button">用户管理</a></p>
                                             </div>
                                             <div class="ibox-content">
-                                                <%--搜索框--%>
-                                                <div class="search-form">
-                                                    <form action="seachUser" method="get">
-                                                        <div class="input-group">
-                                                            <input type="text" placeholder="请输入用户姓名" name="search" class="form-control input-lg" value="${msg}">
-                                                            <div class="input-group-btn">
-                                                                <button class="btn btn-lg btn-primary" type="submit">
-                                                                    搜索
-                                                                </button>
-                                                            </div>
-                                                        </div>
-
-                                                    </form>
-                                                </div>
 
                                                 <table class="footable table table-stripped" data-page-size="12" data-filter=#filter id="mytable">
                                                     <thead>
@@ -177,10 +165,7 @@
                                                     </tfoot>
                                                 </table>
 
-                                                <%--style="position: absolute;left: 720px;top: 880px;"--%>
-                                                <div >
-                                                    <%@ include file="pageFile.jsp" %>
-                                                </div>
+
                                             </div>
 
                                             <!-- 用户编辑对话框 -->
@@ -294,33 +279,43 @@
 <script src="assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
 <script src="assets/vendor/chartist/js/chartist.min.js"></script>
 <script src="assets/scripts/klorofil-common.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/locale/bootstrap-table-zh-CN.min.js"></script>
 
 </body>
 <script>
-    function editUser(uid) {
-        $.ajax({
-            type:"get",
-            url:"/ssmunion/editUser",
-            data:{"uid":uid},
-            success:function (data) {
-                $("#edit_userId").val(data.uid);
-                $("#edit_userName").val(data.uname);
-                $("#edit_userSex").val(data.usex);
-                $("#edit_userAge").val(data.uage);
-                $("#edit_userVip").val(data.uvip);
-            },
-        });
-    }
-    function deleteUser(uid) {
-        $.ajax({
-            type: "get",
-            url: "deleteUser",
-            data:{"uid":uid},
-            success:function () {
-                window.location.reload();
-            }
-        });
-    }
+    $(function () {
+        $("#mytable").bootstrapTable({
+            url:'users',
+            columns:[{
+                checkbox: true
+            },{
+                //列属性
+                field:'id',
+                title:'编号'
+            },{
+                field:'username',
+                title:'用户'
+            },{
+                field:'password',
+                title:'年龄'
+            },{
+                field:'password',
+                title:'性别'
+
+
+            }],
+            method:'post',
+            search: true,
+            searchOnEnterKey: true,
+            pageNumber: 1,
+            pageSize: 5,
+            pagination: true,
+            sidePagination: 'server'
+
+
+        })
+    })
 </script>
 
 </html>
