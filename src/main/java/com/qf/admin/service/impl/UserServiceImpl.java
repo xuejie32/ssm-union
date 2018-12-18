@@ -1,5 +1,6 @@
 package com.qf.admin.service.impl;
 
+import com.alibaba.fastjson.JSONObject;
 import com.qf.admin.dao.UserDao;
 import com.qf.admin.pojo.po.PageModel;
 import com.qf.admin.pojo.po.User;
@@ -81,6 +82,42 @@ public class UserServiceImpl implements UserService {
         int i = 0;
         try {
             i = userDao.deleteUser(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return i;
+    }
+
+    @Override
+    public JSONObject listUsersJson(JSONObject jsonObject) {
+        JSONObject jo = new JSONObject();
+        try {
+            List<User> rows = userDao.listUsers(jsonObject);
+            Long total = userDao.countUsers(jsonObject);
+            jo.put("total",total);
+            jo.put("rows",rows);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return jo;
+    }
+
+    @Override
+    public User findUser(int uid) {
+        User user = null;
+        try {
+            user = userDao.findUser(uid);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
+    @Override
+    public int deleteUser1(int uid) {
+        int i  = 0;
+        try {
+            i = userDao.deleteUser1(uid);
         } catch (Exception e) {
             e.printStackTrace();
         }

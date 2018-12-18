@@ -1,5 +1,6 @@
 package com.qf.admin.dao;
 
+import com.alibaba.fastjson.JSONObject;
 import com.qf.admin.pojo.po.User;
 import org.apache.ibatis.annotations.Param;
 
@@ -23,4 +24,12 @@ public interface UserDao {
     int updateUser(User user);
 
     int deleteUser(User user);
+
+    List<User> listUsers(JSONObject jsonObject);
+
+    Long countUsers(JSONObject jsonObject);
+
+    User findUser(int uid);
+
+    int deleteUser1(int uid);
 }

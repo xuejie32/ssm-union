@@ -36,6 +36,33 @@
     </update>
 
     <delete id="deleteUser" parameterType="com.qf.admin.pojo.po.User" >
+        DELETE FROM tb_user WHERE uid=#{uid}
+    </delete>
+
+    <select id="listUsers" resultType="com.qf.admin.pojo.po.User">
+        SELECT * FROM tb_user
+        <where>
+            <if test="search != null and search != ''">
+                uname like CONCAT(CONCAT('%',#{search}),'%')
+            </if>
+        </where>
+        limit #{offset},#{limit}
+    </select>
+    
+    <select id="countUsers" resultType="_long">
+        SELECT COUNT(*) FROM tb_user
+        <where>
+            <if test="search != null and search != ''">
+                uname like CONCAT(CONCAT('%',#{search}),'%')
+            </if>
+        </where>
+    </select>
+
+    <select id="findUser" parameterType="_int" resultType="com.qf.admin.pojo.po.User">
+        SELECT * FROM tb_user WHERE uid=#{uid}
+    </select>
+
+    <delete id="deleteUser1" parameterType="_int">
 
         DELETE FROM tb_user WHERE uid=#{uid}
     </delete>

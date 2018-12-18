@@ -87,7 +87,7 @@
         <div class="sidebar-scroll">
             <nav>
                 <ul class="nav">
-                    <li><a href="/ssmunion/users" class="active"><i class="lnr lnr-home"></i> <span>用户管理</span></a></li>
+                    <li><a href="/ssmunion/index1" class="active"><i class="lnr lnr-home"></i> <span>用户管理</span></a></li>
                     <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>订单管理</span></a></li>
                     <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>商品管理</span></a></li>
                     <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>员工管理</span></a></li>
@@ -101,12 +101,11 @@
     <div class="main">
         <!-- MAIN CONTENT -->
         <div class="main-content">
-            <div class="container-fluid">
+
+            <div class="container-fluid" style="background-color: white">
                 <!-- OVERVIEW -->
-                <div class="panel panel-headline">
 
                     <div class="panel-body">
-
                         <%--哈哈--%>
                             <div class="row wrapper border-bottom white-bg page-heading">
                                 <div class="col-lg-12">
@@ -114,44 +113,12 @@
                                 </div>
                             </div>
                             <div class="wrapper wrapper-content animated fadeInRight">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="ibox float-e-margins">
                                             <div class="ibox-title">
                                                 <p><a class="btn btn-primary btn-lg" href="#" role="button">用户管理</a></p>
                                             </div>
-                                            <div class="ibox-content">
+
 
                                                 <table class="footable table table-stripped" data-page-size="12" data-filter=#filter id="mytable">
-                                                    <thead>
-                                                    <tr>
-                                                        <th>用户ID</th>
-                                                        <th>姓名</th>
-                                                        <th data-hide="phone,tablet">性别</th>
-                                                        <th data-hide="phone,tablet">年龄</th>
-                                                        <th data-hide="phone,tablet">会员</th>
-                                                        <th data-hide="phone,tablet">操作</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <c:forEach items="${page.list}" var="p">
-                                                        <tr class="gradeX">
-                                                            <td>${p.uid}</td>
-                                                            <td>
-                                                                ${p.uname}
-                                                            </td>
-                                                            <td>${p.usex}</td>
-                                                            <td>${p.uage}</td>
-                                                            <td class="center">${p.uvip}</td>
-                                                            <td class="center">
-                                                                <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#customerEditDialog" onclick="editUser(${p.uid})">修改</a>
-                                                                <a href="#" class="btn btn-danger btn-xs" onclick="deleteUser(${p.uid})">删除</a>
-                                                            </td>
-                                                        </tr>
-                                                    </c:forEach>
-
-
-                                                    </tbody>
                                                     <tfoot>
                                                     <tr>
                                                         <td colspan="3">
@@ -165,11 +132,8 @@
                                                     </tfoot>
                                                 </table>
 
-
-                                            </div>
-
                                             <!-- 用户编辑对话框 -->
-                                            <div class="modal fade" id="customerEditDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -180,7 +144,7 @@
                                                         </div>
                                                         <form class="form-horizontal" id="edit_Student_form" method="post" action="updateUser">
                                                             <div class="modal-body">
-                                                                <input  type="hidden" id="edit_userId" name="uid" value="${user.uid}" />
+                                                                <input  type="hidden" id="edit_userId" name="uid"  />
                                                                 <div class="form-group">
                                                                     <label for="edit_userName" class="col-sm-2 control-label" >姓   名</label>
                                                                     <div class="col-sm-10">
@@ -261,16 +225,16 @@
                                                 </div>
                                             </div>
 
-                                        </div>
-                </div>
-                <!-- END OVERVIEW -->
+                            </div>
+                    </div>
 
+             </div>
+                <!-- END OVERVIEW -->
+            </div>
         <!-- END MAIN CONTENT -->
     </div>
     <!-- END MAIN -->
-    <div class="clearfix"></div>
 
-</div>
 <!-- END WRAPPER -->
 <!-- Javascript -->
 <script src="assets/vendor/jquery/jquery.min.js"></script>
@@ -285,35 +249,81 @@
 </body>
 <script>
     $(function () {
+        function addOperFunction() {
+            return[
+                '<button id="btn-edit" class="btn btn-primary">编辑</button>',
+                '<button id="btn-delete" class="btn btn-danger">删除</button>'
+            ].join(" ")
+        };
+
+//        点击按钮会有事件
+        window.operateEvents= {
+            "click #btn-edit": function (e,v,r,i) {
+                $.get(
+                   "user/"+r.uid,
+                    function (data) {
+                        $("#edit_userId").val(data.uid);
+                        $("#edit_userName").val(data.uname);
+                        $("#edit_userSex").val(data.usex);
+                        $("#edit_userAge").val(data.uage);
+                        $("#edit_userVip").val(data.uvip);
+                    },
+                    'json'
+                );
+                var dailog=$("#editModal").modal({
+                    backdrop:"static",
+                    keyboard:false
+                })
+                dailog.modal("show");
+            },
+            "click #btn-delete": function (e,v,r,i) {
+                $.get(
+                    "deleteUser?uid="+r.uid,
+                    function (data) {
+                        if(data>0){
+                            $("#mytable").bootstrapTable(("refresh"),{pageNumber:1});
+                        }
+                    }
+                )
+            }
+        };
+
         $("#mytable").bootstrapTable({
             url:'users',
             columns:[{
-                checkbox: true
+                checkbox: true,
             },{
-                //列属性
-                field:'id',
+                field:'uid',
                 title:'编号'
             },{
-                field:'username',
-                title:'用户'
+                field:'uname',
+                title:'姓名'
             },{
-                field:'password',
-                title:'年龄'
-            },{
-                field:'password',
+                field:'usex',
                 title:'性别'
-
-
+            }, {
+                field: 'uage',
+                title: '年龄'
+            },{
+                field: 'uvip',
+                title: '会员'
+            },{
+                field: 'button',
+                title: '操作',
+                formatter:addOperFunction,
+                events:operateEvents
             }],
+            height:500,
             method:'post',
             search: true,
             searchOnEnterKey: true,
             pageNumber: 1,
             pageSize: 5,
             pagination: true,
-            sidePagination: 'server'
-
-
+            sidePagination: 'server',
+            pageList:[2,5,10],
+            paginationPreText:"上一页",
+            paginationNextText:"下一页"
         })
     })
 </script>

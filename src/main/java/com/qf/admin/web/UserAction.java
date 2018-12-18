@@ -1,5 +1,6 @@
 package com.qf.admin.web;
 
+import com.alibaba.fastjson.JSONObject;
 import com.qf.admin.pojo.po.PageModel;
 
 import com.qf.admin.pojo.po.User;
@@ -16,18 +17,18 @@ public class UserAction {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/users",method = RequestMethod.GET)
-    public String showAllUserByPage(@RequestParam(defaultValue = "1")int num, Model model){
-
-        int curNum = num;
-
-        System.out.println(curNum);
-        PageModel pm  = userService.showAllUserByPage(curNum);
-
-        model.addAttribute("page",pm);
-
-        return "index1";
-    }
+//    @RequestMapping(value = "/users",method = RequestMethod.GET)
+//    public String showAllUserByPage(@RequestParam(defaultValue = "1")int num, Model model){
+//
+//        int curNum = num;
+//
+//        System.out.println(curNum);
+//        PageModel pm  = userService.showAllUserByPage(curNum);
+//
+//        model.addAttribute("page",pm);
+//
+//        return "index1";
+//    }
 
     @RequestMapping(value = "/seachUser",method = RequestMethod.GET)
     public String seachUser(@RequestParam("search") String search,@RequestParam(defaultValue = "1")int num,Model model){
@@ -43,13 +44,6 @@ public class UserAction {
         return "index1";
     }
 
-    @RequestMapping(value = "/addUser",method = RequestMethod.POST)
-    public String addUser(User user){
-
-        userService.addUser(user);
-
-        return "redirect:users";
-    }
 
     @ResponseBody
     @RequestMapping(value = "/editUser",method = RequestMethod.GET)
@@ -60,18 +54,45 @@ public class UserAction {
         return user;
     }
 
+
+    //使用bootstrap table分页
+    @GetMapping("/{page}")
+    public String page(@PathVariable String page){
+        return page;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/users",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    public Object listUsers(@RequestBody JSONObject jsonObject){
+        jsonObject = userService.listUsersJson(jsonObject);
+        return jsonObject;
+    }
+    @ResponseBody
+    @RequestMapping(value = "/user/{uid}",method = RequestMethod.GET)
+    public User findUser(@PathVariable("uid")int uid){
+        User user = userService.findUser(uid);
+        return user;
+    }
+
     @PostMapping("/updateUser")
     public String updateUser(User user){
         userService.updateUser(user);
-
-        return "redirect:users";
+        return "redirect:index1";
     }
-
+    @ResponseBody
     @RequestMapping(value = "/deleteUser",method = RequestMethod.GET)
-    public String deleteUser(User user){
-
-        userService.deleteUser(user);
-
-        return "redirect:users";
+    public int deleteUser(@RequestParam("uid") Integer uid){
+        System.out.println(uid);
+        int i = userService.deleteUser1(uid);
+        return i;
     }
+
+    @RequestMapping(value = "/addUser",method = RequestMethod.POST)
+    public String addUser(User user){
+
+        userService.addUser(user);
+
+        return "redirect:index1";
+    }
+
 }
