@@ -89,7 +89,7 @@
         <div class="sidebar-scroll">
             <nav>
                 <ul class="nav">
-                    <li><a href="/ssmunion/car"><i class="lnr lnr-home"></i> <span>用户管理</span></a></li>
+                    <li><a href="/ssmunion/index1"><i class="lnr lnr-home"></i> <span>用户管理</span></a></li>
                     <li><a href="/ssmunion/car"><i class="lnr lnr-home"></i> <span>订单管理</span></a></li>
                     <li><a href="/ssmunion/car"><i class="lnr lnr-home"></i> <span>商品管理</span></a></li>
                     <li><a href="/ssmunion/car"><i class="lnr lnr-home"></i> <span>员工管理</span></a></li>
@@ -103,9 +103,9 @@
     <div class="main">
         <!-- MAIN CONTENT -->
         <div class="main-content">
-            <div class="container-fluid">
+            <div class="container-fluid" style="background-color: white">
                 <!-- OVERVIEW -->
-                <div class="panel panel-headline">
+
 
                     <div class="panel-body">
 
@@ -128,7 +128,7 @@
                                                    data-filter=#filter id="tbcar">
 
                                             </table>
-                                            <button class="btn btn-success" data-toggle="modal" data-target="#addCarM">新增</button>
+                                            <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#addCarM">新增</button>
 
 
                                         </div>
@@ -297,8 +297,8 @@
                 title: '操作',
                 align: 'center',
                 formatter: function () {
-                    return ["<button type='button' class='btn btn-success' id='upCarbtn'>修改</button>",
-                        "<button type='button' class='btn btn-success' id='delCarbtn'>删除</button>"].join("");
+                    return ["<button type='button' class='btn btn-primary' id='upCarbtn'>修改</button>",
+                        "<button type='button' class='btn btn-danger' id='delCarbtn'>删除</button>"].join("");
                 },
                 events: window.operateEvents = {
                     "click #upCarbtn": function (e, v, r, i) {

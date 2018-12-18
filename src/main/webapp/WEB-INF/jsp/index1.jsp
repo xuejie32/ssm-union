@@ -91,7 +91,7 @@
                     <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>订单管理</span></a></li>
                     <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>商品管理</span></a></li>
                     <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>员工管理</span></a></li>
-                    <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>购物车管理</span></a></li>
+                    <li><a href="/ssmunion/car" ><i class="lnr lnr-home"></i> <span>购物车管理</span></a></li>
                 </ul>
             </nav>
         </div>

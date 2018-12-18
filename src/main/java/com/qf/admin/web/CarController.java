@@ -15,10 +15,7 @@ import java.util.List;
 public class CarController {
     @Autowired
     private CarService carService;
-    @GetMapping(value = "/{path}")
-    public String path(@PathVariable String path){
-        return path;
-    }
+
 
     @PostMapping(value = "/cars",produces = "application/json;charset=UTF-8")
     @ResponseBody
