@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qf.admin.dao.StaffDao">
+    <select id="showAllStaff" resultType="com.qf.admin.pojo.po.Staff">
+        select sid,sname,sage,ssex,saddress from tb_staff
+        <where>
+            <if test="search!=null and search!=''">
+                sname like concat(concat('%',#{search}),'%')
+            </if>
+        </where>
+        limit #{offset},#{limit}
+    </select>
+    <select id="totalCountStaff" resultType="Long">
+        select count(*) from tb_staff
+        <where>
+            <if test="search!=null and search!=''">
+                sname like concat(concat('%',#{search}),'%')
+            </if>
+        </where>
+    </select>
+    <select id="toUpdateStaff" parameterType="_int" resultType="com.qf.admin.pojo.po.Staff">
+        select sid,sname,sage,ssex,saddress from tb_staff where sid=#{sid}
+    </select>
+    <update id="updatestaff" parameterType="com.qf.admin.pojo.po.Staff">
+        UPDATE tb_staff set sname=#{sname},sage=#{sage},ssex=#{ssex},saddress=#{saddress} where sid=#{sid}
+    </update>
+    <delete id="delete">
+        delete from tb_staff where sid=#{sid}
+    </delete>
+    <insert id="addstaff" parameterType="com.qf.admin.pojo.po.Staff">
+        INSERT into tb_staff(sname,sage,ssex,saddress) values(#{sname},#{sage},#{ssex},#{saddress})
+    </insert>
+</mapper>
