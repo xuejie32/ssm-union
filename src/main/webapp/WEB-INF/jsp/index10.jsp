@@ -137,7 +137,6 @@
                         <div >
                             <%@ include file="pageFile.jsp" %>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -170,6 +169,13 @@
                                 </div>
                             </div>
                             <ul id="mainnav-menu" class="list-group">
+
+                                <li >
+                                    <a href="shouye" >
+                                        <i class="demo-psi-home"></i>
+                                        <span class="menu-title">返回首页</span>
+                                    </a>
+                                </li>
 
                                 <li class="active-sub">
                                     <a href="index.html" >
