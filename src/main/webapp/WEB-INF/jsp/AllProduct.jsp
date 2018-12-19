@@ -173,7 +173,18 @@
                                 </div>
                             </div>
                             <ul id="mainnav-menu" class="list-group">
-
+                                <li >
+                                    <a href="shouye" >
+                                        <i class="demo-psi-home"></i>
+                                        <span class="menu-title">返回首页</span>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="listUsers" >
+                                        <i class="demo-psi-home"></i>
+                                        <span class="menu-title">用户管理展示</span>
+                                    </a>
+                                </li>
                                 <li class="active-sub">
                                     <a href="index.html">
                                         <i class="demo-psi-home"></i>

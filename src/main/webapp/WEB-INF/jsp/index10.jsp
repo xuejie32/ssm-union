@@ -183,6 +183,12 @@
                                         <span class="menu-title">用户管理展示</span>
                                     </a>
                                 </li>
+                                <li >
+                                    <a href="AllProduct" >
+                                        <i class="demo-psi-home"></i>
+                                        <span class="menu-title">商品展示</span>
+                                    </a>
+                                </li>
 
                                 <li >
                                     <a href="#" >
