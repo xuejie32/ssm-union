@@ -36,7 +36,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="brand">
-            <a href="index.html"><img src="assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+            <a href="index.html"><img src="assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo" ></a>
         </div>
         <div class="container-fluid">
             <div class="navbar-btn">
@@ -90,7 +90,7 @@
                     <li><a href="/ssmunion/index1" class="active"><i class="lnr lnr-home"></i> <span>用户管理</span></a></li>
                     <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>订单管理</span></a></li>
                     <li><a href="/ssmunion/product" ><i class="lnr lnr-home"></i> <span>商品管理</span></a></li>
-                    <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>员工管理</span></a></li>
+                    <li><a href="/ssmunion/staff" ><i class="lnr lnr-home"></i> <span>员工管理</span></a></li>
                     <li><a href="/ssmunion/car" ><i class="lnr lnr-home"></i> <span>购物车管理</span></a></li>
                 </ul>
             </nav>
@@ -104,6 +104,7 @@
 
             <div class="container-fluid" style="background-color: white">
                 <!-- OVERVIEW -->
+
 
                     <div class="panel-body">
                         <%--哈哈--%>

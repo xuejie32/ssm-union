@@ -87,11 +87,11 @@
         <div class="sidebar-scroll">
             <nav>
                 <ul class="nav">
-                    <li><a href="/ssmunion/index1" class="active"><i class="lnr lnr-home"></i> <span>用户管理</span></a></li>
+                    <li><a href="/ssmunion/index1" ><i class="lnr lnr-home"></i> <span>用户管理</span></a></li>
                     <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>订单管理</span></a></li>
-                    <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>商品管理</span></a></li>
-                    <li><a href="/ssmunion/staff" ><i class="lnr lnr-home"></i> <span>员工管理</span></a></li>
-                    <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>购物车管理</span></a></li>
+                    <li><a href="/ssmunion/product" ><i class="lnr lnr-home"></i> <span>商品管理</span></a></li>
+                    <li><a href="/ssmunion/staff" class="active"><i class="lnr lnr-home"></i> <span>员工管理</span></a></li>
+                    <li><a href="/ssmunion/car" ><i class="lnr lnr-home"></i> <span>购物车管理</span></a></li>
                 </ul>
             </nav>
         </div>
