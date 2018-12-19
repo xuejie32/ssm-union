@@ -61,14 +61,13 @@
 <body>
 <div id="container" class="effect aside-float aside-bright mainnav-lg">
     <header id="navbar">
-        <div id="navbar-container" class="boxed">
-            <div class="navbar-header">
-                <a href="index.html" class="navbar-brand">
-                    <img src="http://www.niftyadmin.cn/html/nifty/img/logo.png" alt="Nifty Logo" class="brand-icon">
-                    <div class="brand-title">
-                        <span class="brand-text">Nifty</span>
-                    </div>
+        <div id="navbar-container" class="boxed" style="height: 70px">
+            <div class="navbar-header" style="background-color: #263238">
+                <a href="#" class="navbar-brand" style="height: 70px">
+                    <img src="assets/img/logo.png" alt="Nifty Logo" width="200px">
+
                 </a>
+
             </div>
             <div class="navbar-content clearfix">
                 <ul class="nav navbar-top-links pull-left">

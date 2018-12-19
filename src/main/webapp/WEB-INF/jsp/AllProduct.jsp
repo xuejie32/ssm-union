@@ -62,13 +62,11 @@
 <body>
 <div id="container" class="effect aside-float aside-bright mainnav-lg">
     <header id="navbar">
-        <div id="navbar-container" class="boxed">
-            <div class="navbar-header">
-                <a href="index.html" class="navbar-brand">
-                    <img src="http://www.niftyadmin.cn/html/nifty/img/logo.png" alt="Nifty Logo" class="brand-icon">
-                    <div class="brand-title">
-                        <span class="brand-text">Nifty</span>
-                    </div>
+        <div id="navbar-container" class="boxed" style="height: 70px">
+            <div class="navbar-header" style="background-color: #263238">
+                <a href="#" class="navbar-brand" style="height: 70px">
+                    <img src="assets/img/logo.png" alt="Nifty Logo" width="200px">
+
                 </a>
             </div>
             <div class="navbar-content clearfix">
@@ -119,13 +117,13 @@
                             </thead>
                             <tbody>
                             <c:forEach items="${products }" var="pro" varStatus="vs">
-                            <div id="mydiv" class="col-lg-4" style="background-color:white;margin: 0 auto;text-align:center">
+                            <div id="mydiv" class="col-lg-3" style="background-color:white;margin: 0 auto;text-align:center;margin-left: 70px;margin-top: 50px;box-shadow: darkgrey 2px 2px 10px 2px">
 
                                 <!-- photo/1/h_01.jpg -->
                                 <div >
                                     <img src="${pageContext.request.contextPath }/${pro.pimage}" width="300px"  style="margin-top: 50px">
                                 </div>
-                                <div style="margin-top: 30px;font-size: medium" class="text-info"><span class="btn btn-primary">${pro.pname }&nbsp;&nbsp${pro.price }</span></div>
+                                <div style="margin-top: 30px;padding-bottom:30px;font-size: medium" class="text-info"><span class="btn btn-primary">${pro.pname }&nbsp;&nbsp${pro.price }</span></div>
 
 
                             </div>

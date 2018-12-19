@@ -71,7 +71,7 @@
             <div class="row">
                 <!-- LOGO -->
                 <div class="col-md-3">
-                    <div class="header-logo">
+                    <div class="header-logo" style="margin-top: -15px">
                         <a href="#" class="logo">
                             <img src="assets/img/logo.png" alt="">
                         </a>
