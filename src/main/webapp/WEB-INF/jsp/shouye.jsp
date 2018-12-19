@@ -52,7 +52,7 @@
             <ul class="header-links pull-left">
                 <li><a href="#"><i class="fa fa-phone"></i> 888888888</a></li>
                 <li><a href="#"><i class="fa fa-envelope-o"></i> qianfeng@email.com</a></li>
-                <li><a href="#"><i class="fa fa-map-marker"></i> 旺田大酒店</a></li>
+                <li><a href="index1"><i class="fa fa-map-marker"></i> 进入后台管理页面</a></li>
             </ul>
             <ul class="header-links pull-right">
                 <li><a href="#"><i class="fa fa-dollar"></i> 钱包</a></li>
