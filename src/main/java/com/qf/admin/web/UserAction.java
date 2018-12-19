@@ -17,18 +17,18 @@ public class UserAction {
     @Autowired
     private UserService userService;
 
-//    @RequestMapping(value = "/users",method = RequestMethod.GET)
-//    public String showAllUserByPage(@RequestParam(defaultValue = "1")int num, Model model){
-//
-//        int curNum = num;
-//
-//        System.out.println(curNum);
-//        PageModel pm  = userService.showAllUserByPage(curNum);
-//
-//        model.addAttribute("page",pm);
-//
-//        return "index1";
-//    }
+    @RequestMapping(value = "/listUsers",method = RequestMethod.GET)
+    public String showAllUserByPage(@RequestParam(defaultValue = "1")int num, Model model){
+
+        int curNum = num;
+
+        System.out.println(curNum);
+        PageModel pm  = userService.showAllUserByPage(curNum);
+
+        model.addAttribute("page",pm);
+
+        return "index10";
+    }
 
     @RequestMapping(value = "/seachUser",method = RequestMethod.GET)
     public String seachUser(@RequestParam("search") String search,@RequestParam(defaultValue = "1")int num,Model model){

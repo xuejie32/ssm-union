@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
 
         pm.setList(list);
 
-        pm.setUrl("users");
+        pm.setUrl("listUsers");
 
         return pm;
     }
