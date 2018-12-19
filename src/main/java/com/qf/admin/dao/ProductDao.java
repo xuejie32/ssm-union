@@ -16,4 +16,6 @@ public interface ProductDao {
     int updateProduct(Product p)throws Exception;
 
     int deleteProduct(Product p)throws Exception;
+
+    List<Product> AllProduct()throws Exception;
 }

@@ -74,4 +74,15 @@ public class ProductServiceImpl implements ProductService {
         }
         return 0;
     }
+
+    @Override
+    public List<Product> AllProduct() {
+
+        try {
+            return dao.AllProduct();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

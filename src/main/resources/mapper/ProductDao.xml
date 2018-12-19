@@ -37,4 +37,8 @@
     <delete id="deleteProduct" parameterType="com.qf.admin.pojo.po.Product">
         DELETE FROM tb_product WHERE pid=#{pid}
     </delete>
+
+    <select id="AllProduct" resultType="com.qf.admin.pojo.po.Product">
+        SELECT * FROM tb_product
+    </select>
 </mapper>

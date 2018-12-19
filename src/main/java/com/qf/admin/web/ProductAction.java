@@ -3,9 +3,13 @@ package com.qf.admin.web;
 import com.alibaba.fastjson.JSONObject;
 import com.qf.admin.pojo.po.Product;
 import com.qf.admin.service.impl.ProductServiceImpl;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class ProductAction {
@@ -52,5 +56,15 @@ public class ProductAction {
     public String deleteProduct(Product p){
         int i=ser.deleteProduct(p);
         return "redirect:product";
+    }
+
+    /**
+     * 查询所有
+     */
+    @GetMapping("/AllProduct")
+    public String AllProduct(Model model){
+       List<Product> list= ser.AllProduct();
+       model.addAttribute("products",list);
+        return "AllProduct";
     }
 }
