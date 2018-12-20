@@ -59,6 +59,7 @@
                 <li><a href="listUsers"><i class="fa fa-user-o"></i> 个人中心</a></li>
                 <li><a href="AllProduct"><i class="fa fa-product-hunt"></i> 商品展示</a></li>
                 <li><a href="order1"><i class="fa fa-first-order"></i> 订单中心</a></li>
+                <li><a href="webShowStaff"><i class="fa fa-first-order"></i> 员工风采</a></li>
             </ul>
         </div>
     </div>
