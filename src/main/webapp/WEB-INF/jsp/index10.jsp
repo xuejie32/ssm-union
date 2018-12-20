@@ -105,14 +105,14 @@
                             用户管理展示</h3>
                     </div>
                     <div class="panel-body">
-                        <table class="footable table table-stripped" data-page-size="8" data-filter=#filter id="mytable">
+                        <table class="table table-bordered table table-hover" data-page-size="8" data-filter=#filter id="mytable">
                             <thead>
                             <tr>
                                 <th>学生ID</th>
                                 <th>姓名</th>
                                 <th data-hide="phone,tablet">性别</th>
                                 <th data-hide="phone,tablet">年龄</th>
-                                <th data-hide="phone,tablet">操作</th>
+                                <th data-hide="phone,tablet">会员</th>
                             </tr>
                             </thead>
                             <tbody>
