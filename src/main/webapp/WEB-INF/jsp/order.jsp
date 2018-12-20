@@ -120,11 +120,11 @@
                                             </div>
 
 
-                                                <table class="footable table table-stripped" data-page-size="12" data-filter=#filter id="ordertable">
+                                                <table class="footable table table-stripped" data-page-size="15" data-filter=#filter id="ordertable">
                                                     <tfoot>
                                                     <tr>
                                                         <td colspan="4">
-                                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#studentAdd">新增</button>
+                                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#orderAdd">新增</button>
                                                         </td>
 
                                                         <td colspan="11">

@@ -22,9 +22,7 @@ public class OrderAction {
     @ResponseBody
     @RequestMapping(value = "/showAllOrders",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     public Object showAllOrders(@RequestBody JSONObject jsonObject){
-        System.out.println(jsonObject);
         jsonObject =orderService.getAllOrders(jsonObject);
-        System.out.println(jsonObject);
         return jsonObject;
     }
     @PostMapping(value = "/addOrder")
@@ -46,5 +44,12 @@ public class OrderAction {
     public Order getOrder(@PathVariable("oid") int oid){
         Order order=orderService.getOrder(oid);
         return order;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/showOrders",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    public Object showOrders(@RequestBody JSONObject jsonObject){
+        jsonObject =orderService.getAllOrders(jsonObject);
+        return jsonObject;
     }
 }
