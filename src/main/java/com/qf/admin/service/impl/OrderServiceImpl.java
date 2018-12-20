@@ -59,6 +59,8 @@ public class OrderServiceImpl implements OrderService{
         try {
             List<Order> rows=orderDao.getAllOrders(jsonObject);
             Long total=orderDao.countOrders(jsonObject);
+            System.out.println(rows);
+            System.out.println(total);
             jo.put("total",total);
             jo.put("rows",rows);
         }catch (Exception e){

@@ -151,7 +151,6 @@
                            <div class="modal-footer">
                                <input type="submit" class="btn btn-primary"/>
                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-
                            </div>
                        </form>
                    </div>
