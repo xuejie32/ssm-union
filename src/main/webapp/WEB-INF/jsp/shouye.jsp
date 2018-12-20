@@ -58,6 +58,7 @@
                 <li><a href="#"><i class="fa fa-dollar"></i> 钱包</a></li>
                 <li><a href="listUsers"><i class="fa fa-user-o"></i> 个人中心</a></li>
                 <li><a href="AllProduct"><i class="fa fa-product-hunt"></i> 商品展示</a></li>
+                <li><a href="order1"><i class="fa fa-first-order"></i> 订单中心</a></li>
             </ul>
         </div>
     </div>

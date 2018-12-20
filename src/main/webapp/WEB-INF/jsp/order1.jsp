@@ -50,7 +50,7 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
+                        <li class="active"><a href="shouye">首页</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li class="dropdown">
@@ -216,9 +216,8 @@
         <!-- -->
         $('#ordertable').bootstrapTable({
             //表格属性
-            url:'showOrders',
-            columns:[
-                {
+            url:'showAllOrders',
+            columns:[{
                 //列属性
                 field:'oid',
                 title:'编号'
@@ -269,8 +268,6 @@
             }],
             height:500,
             method:'post',
-
-            searchOnEnterKey: true,
             pageNumber: 1,
             pageSize: 7,
             pagination: true,
