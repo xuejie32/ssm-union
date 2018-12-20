@@ -24,7 +24,6 @@
                 orderNo LIKE CONCAT(CONCAT('%',#{search}),'%')
             </if>
         </where>
-        limit #{offset},#{limit}
     </select>
     <insert id="addOrder" parameterType="com.qf.admin.pojo.po.Order" >
         INSERT INTO tb_order (orderNo,userName,goodsName,createTime,payTime,userId,totalPrice) VALUES

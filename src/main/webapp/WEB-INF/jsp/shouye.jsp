@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>Electro - HTML Ecommerce Template</title>
+    <title>老叮当商城</title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -183,9 +183,9 @@
                 <li><a href="#">手机数码</a></li>
                 <li><a href="#">鞋帽箱包</a></li>
                 <li><a href="#">商务用品</a></li>
-                <li><a href="#">充气娃娃</a></li>
+                <li><a href="#">哈哈哈</a></li>
                 <li><a href="#">小米旗舰店</a></li>
-                <li><a href="#">薛杰</a></li>
+                <li><a href="#">呵呵呵</a></li>
             </ul>
             <!-- /NAV -->
         </div>

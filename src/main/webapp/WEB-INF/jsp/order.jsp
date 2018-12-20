@@ -88,11 +88,12 @@
         <div class="sidebar-scroll">
             <nav>
                 <ul class="nav">
-                    <li><a href="/ssmunion/index1" class="active"><i class="lnr lnr-home"></i> <span>用户管理</span></a></li>
+                    <li><a href="/ssmunion/index1" ><i class="lnr lnr-home"></i> <span>用户管理</span></a></li>
                     <li><a href="/ssmunion/order" class="active"><i class="lnr lnr-home"></i> <span>订单管理</span></a></li>
-                    <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>商品管理</span></a></li>
-                    <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>员工管理</span></a></li>
-                    <li><a href="/ssmunion/users" ><i class="lnr lnr-home"></i> <span>购物车管理</span></a></li>
+                    <li><a href="/ssmunion/product" ><i class="lnr lnr-home"></i> <span>商品管理</span></a></li>
+                    <li><a href="/ssmunion/staff" ><i class="lnr lnr-home"></i> <span>员工管理</span></a></li>
+                    <li><a href="/ssmunion/car" ><i class="lnr lnr-home"></i> <span>购物车管理</span></a></li>
+                    <li><a href="shouye" ><i class="lnr lnr-home"></i> <span>返回首页</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -155,7 +156,7 @@
                                                                 <div class="form-group">
                                                                     <label for="edit_userId" class="col-sm-2 control-label">用户Id</label>
                                                                     <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="edit_userId" placeholder="用户Id" name="useId" value="${order.userId}">
+                                                                        <input type="text" class="form-control" id="edit_userId" placeholder="用户Id" name="userId" value="${order.userId}">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">

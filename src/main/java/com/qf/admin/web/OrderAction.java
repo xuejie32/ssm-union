@@ -37,6 +37,7 @@ public class OrderAction {
 
     @PostMapping("/updateOrder")
     public String updateUser(Order order){
+        System.out.println(order.getUserId());
         orderService.updateOrder(order);
         return "redirect:order";
     }

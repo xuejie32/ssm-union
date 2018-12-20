@@ -94,6 +94,8 @@ public class UserServiceImpl implements UserService {
         try {
             List<User> rows = userDao.listUsers(jsonObject);
             Long total = userDao.countUsers(jsonObject);
+            System.out.println(total);
+            System.out.println(rows);
             jo.put("total",total);
             jo.put("rows",rows);
         } catch (Exception e) {
