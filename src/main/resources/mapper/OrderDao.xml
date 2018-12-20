@@ -17,6 +17,7 @@
     <delete id="deleteOrder" parameterType="int">
         DELETE FROM tb_order where oid=#{oid}
     </delete>
+
     <select id="countOrders" resultType="java.lang.Long">
         SELECT count(*) FROM tb_order
         <where>
@@ -24,6 +25,7 @@
                 orderNo LIKE CONCAT(CONCAT('%',#{search}),'%')
             </if>
         </where>
+
     </select>
     <insert id="addOrder" parameterType="com.qf.admin.pojo.po.Order" >
         INSERT INTO tb_order (orderNo,userName,goodsName,createTime,payTime,userId,totalPrice) VALUES

@@ -254,6 +254,12 @@
                 field:'pname',
                 title:'商品名称'
             },{
+                field:'pimage',
+                title:'商品图片',
+                formatter: function (value, row, index) {
+                    return addImage(row,value)
+                }
+            }, {
                 field:'price',
                 title:'商品价钱'
             },{
@@ -310,6 +316,12 @@
 
             return date.getFullYear() + "-" + month + "-" + currentDate ;
         }
+    }
+
+    function addImage(row,value) {
+        return [
+            '<img  src="'+row.pimage+'" width="80px" height="80px"></img>'
+            ];
     }
 </script>
 

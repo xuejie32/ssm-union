@@ -110,7 +110,7 @@
                     <div class="panel-body">
                         <%--哈哈--%>
                             <div class="row wrapper border-bottom white-bg page-heading">
-                                <div  class="class="center-block col-lg-12">
+                                <div  class="center-block col-lg-12">
                                     <h2>商城订单管理系统</h2>
                                 </div>
                             </div>
@@ -288,7 +288,7 @@
         <!-- END MAIN CONTENT -->
     </div>
     <!-- END MAIN -->
-
+</div>
 <!-- END WRAPPER -->
 <!-- Javascript -->
 <script src="assets/vendor/jquery/jquery.min.js"></script>
