@@ -110,7 +110,7 @@
 
                         <!-- Cart -->
                         <div class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            <a class="dropdown-toggle"  href="car1">
                                 <i class="fa fa-shopping-cart"></i>
                                 <span>我的购物车</span>
                                 <div class="qty">6</div>

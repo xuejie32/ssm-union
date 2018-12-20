@@ -2,6 +2,7 @@ package com.qf.admin.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.qf.admin.dao.CarDao;
+import com.qf.admin.pojo.CarVO1;
 import com.qf.admin.pojo.po.Car;
 import com.qf.admin.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,10 @@ public class CarServiceImpl implements CarService {
     @Override
     public Car getCarByCid(Car car) {
         return carDao.getCarByCid(car);
+    }
+
+    @Override
+    public List<CarVO1> getCar1(String uid) {
+        return carDao.getCar1(uid);
     }
 }

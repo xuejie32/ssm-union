@@ -2,10 +2,12 @@ package com.qf.admin.web;
 
 import com.alibaba.fastjson.JSONObject;
 import com.qf.admin.pojo.CarVO;
+import com.qf.admin.pojo.CarVO1;
 import com.qf.admin.pojo.po.Car;
 import com.qf.admin.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -42,5 +44,11 @@ public class CarController {
     public String delCar(Car car){
         carService.delCar(car);
         return "redirect:car";
+    }
+    @GetMapping(value = "car1")
+    public String getCar1(Model model,@RequestParam(defaultValue = "1") String uid){
+        List<CarVO1> list = carService.getCar1(uid);
+        model.addAttribute("products",list);
+        return "car1";
     }
 }

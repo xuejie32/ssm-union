@@ -1,7 +1,9 @@
 package com.qf.admin.dao;
 
 import com.alibaba.fastjson.JSONObject;
+import com.qf.admin.pojo.CarVO1;
 import com.qf.admin.pojo.po.Car;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
@@ -29,4 +31,7 @@ public interface CarDao {
             "where cid=#{search}" +
             "</if></script>")
     int getCarCount(JSONObject obj);
+    @Select("select pdesc,count,pname,price,pimage from tb_product p,(select * from tb_car where uid = ${uid})" +
+            " c where p.pid = c.pid")
+    List<CarVO1> getCar1(@Param("uid") String uid);
 }
