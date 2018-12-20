@@ -26,4 +26,16 @@
         </where>
         limit #{offset},#{limit}
     </select>
+    <insert id="addOrder" parameterType="com.qf.admin.pojo.po.Order" >
+        INSERT INTO tb_order (orderNo,userName,goodsName,createTime,payTime,userId,totalPrice) VALUES
+        (#{orderNo},#{userName},#{goodsName},#{createTime},#{payTime},#{userId},#{totalPrice})
+    </insert>
+
+    <update id="updateOrder" parameterType="com.qf.admin.pojo.po.Order">
+        UPDATE tb_order SET orderNo=#{orderNo},userId=#{userId},userName=#{userName},payType=#{payType},totalPrice=#{totalPrice},orderState=#{orderState},supplierName=#{supplierName},deliveryType=#{deliveryType},goodsName=#{goodsName}
+        WHERE oid=#{oid}
+    </update>
+    <select id="getOrder" resultType="com.qf.admin.pojo.po.Order" parameterType="int">
+        SELECT * from tb_order where oid=#{oid}
+    </select>
 </mapper>

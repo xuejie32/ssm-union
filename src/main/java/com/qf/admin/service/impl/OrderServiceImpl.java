@@ -30,6 +30,30 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
+    public Order getOrder(int oid) {
+        Order order=null;
+        try {
+            order=orderDao.getOrder(oid);
+        }catch (Exception e){
+            logger.info(e.getMessage(), e);
+            e.printStackTrace();
+        }
+        return order;
+    }
+
+    @Override
+    public int updateOrder(Order order) {
+        int result=0;
+        try {
+            result=orderDao.updateOrder(order);
+        }catch (Exception e){
+            logger.info(e.getMessage(), e);
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    @Override
     public JSONObject getAllOrders(JSONObject jsonObject) {
         JSONObject jo=new JSONObject();
         try {
@@ -42,5 +66,19 @@ public class OrderServiceImpl implements OrderService{
             e.printStackTrace();
         }
         return jo;
+    }
+
+    @Override
+    public int addOrder(Order order) {
+
+            int result = 0;
+            try {
+                result = orderDao.addOrder(order);
+            } catch (Exception e) {
+                logger.info(e.getMessage(), e);
+                e.printStackTrace();
+            }
+            return result;
+
     }
 }

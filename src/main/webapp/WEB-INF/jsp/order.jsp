@@ -141,35 +141,68 @@
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
-                                                            <h4 class="modal-title" id="myModalLabel">修改用户信息</h4>
+                                                            <h4 class="modal-title" id="myModalLabel">修改订单信息</h4>
                                                         </div>
-                                                        <form class="form-horizontal" id="edit_Student_form" method="post" action="updateUser">
+                                                        <form class="form-horizontal" id="edit_Order_form" method="post" action="updateOrder">
                                                             <div class="modal-body">
-                                                                <input  type="hidden" id="edit_userId" name="uid"  />
+                                                                <input  type="hidden" id="edit_oid" name="oid"  />
                                                                 <div class="form-group">
-                                                                    <label for="edit_userName" class="col-sm-2 control-label" >姓   名</label>
+                                                                    <label for="edit_orderNo" class="col-sm-2 control-label" >订单ID</label>
                                                                     <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="edit_userName" placeholder="姓名" name="uname" value="${user.uname}">
+                                                                        <input type="text" class="form-control" id="edit_orderNo" placeholder="订单号" name="orderNo" value="${order.orderNo}">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="edit_userSex" class="col-sm-2 control-label">性  别</label>
+                                                                    <label for="edit_userId" class="col-sm-2 control-label">用户Id</label>
                                                                     <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="edit_userSex" placeholder="性别" name="usex" value="${user.usex}">
+                                                                        <input type="text" class="form-control" id="edit_userId" placeholder="用户Id" name="useId" value="${order.userId}">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="edit_userAge" class="col-sm-2 control-label">年  龄</label>
+                                                                    <label for="edit_userName" class="col-sm-2 control-label">用户名</label>
                                                                     <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="edit_userAge" placeholder="年龄" name="uage" value="${user.uage}">
+                                                                        <input type="text" class="form-control" id="edit_userName" placeholder="用户名" name="userName" value="${order.payTime}">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="edit_userAge" class="col-sm-2 control-label">会  员</label>
+                                                                    <label for="edit_payType" class="col-sm-2 control-label">支付类型</label>
                                                                     <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="edit_userVip" placeholder="会员" name="uvip" value="${user.uvip}">
+                                                                        <input type="text" class="form-control" id="edit_payType" placeholder="支付类型" name="payType" value="${order.payType}">
                                                                     </div>
                                                                 </div>
+                                                                <div class="form-group">
+                                                                    <label for="edit_totalPrice" class="col-sm-2 control-label">总价格</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control" id="edit_totalPrice" placeholder="总价格" name="totalPrice" value="${order.totalPrice}">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="edit_orderState" class="col-sm-2 control-label">订单状态</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control" id="edit_orderState" placeholder="订单状态" name="orderState" value="${order.orderState}">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label for="edit_supplierName" class="col-sm-2 control-label">商家名</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control" id="edit_supplierName" placeholder="商家名" name="supplierName" value="${order.supplierName}">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="edit_goodsName" class="col-sm-2 control-label">商品名称</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control" id="edit_goodsName" placeholder="商品名称" name="goodsName" value="${order.goodsName}">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="edit_deliveryType" class="col-sm-2 control-label">配送方式</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control" id="edit_deliveryType" placeholder="配送方式" name="deliveryType" value="${order.deliveryType}">
+                                                                    </div>
+                                                                </div>
+
+
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -188,32 +221,51 @@
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
-                                                            <h4 class="modal-title" id="myModalStudent">请输入新增订单信息</h4>
+                                                            <h4 class="modal-title" id="myModalOrder">请输入新增订单信息</h4>
                                                         </div>
-                                                        <form class="form-horizontal" id="add_Student_form" method="post" action="addUser">
+                                                        <form class="form-horizontal" id="add_Order_form" method="post" action="addOrder">
                                                             <div class="modal-body">
                                                                 <div class="form-group">
-                                                                    <label for="edit_userName" class="col-sm-2 control-label" >订单号</label>
+                                                                    <label for="edit_orderNo" class="col-sm-2 control-label" >订单号</label>
                                                                     <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="add_userName" placeholder="订单号" name="uname" >
+                                                                        <input type="text" class="form-control" id="add_orderNo" placeholder="订单号" name="orderNo" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="edit_userSex" class="col-sm-2 control-label">用户名</label>
+                                                                    <label for="edit_userId" class="col-sm-2 control-label" >用户ID</label>
                                                                     <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="add_userSex" placeholder="用户名" name="usex" >
+                                                                        <input type="text" class="form-control" id="add_userId" placeholder="用户ID" name="userId" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="edit_userAge" class="col-sm-2 control-label">用户ID</label>
+                                                                    <label for="edit_userName" class="col-sm-2 control-label">用户名</label>
                                                                     <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="add_userAge" placeholder="用户ID" name="uage" >
+                                                                        <input type="text" class="form-control" id="add_userName" placeholder="用户名" name="userName" >
                                                                     </div>
                                                                 </div>
+
                                                                 <div class="form-group">
-                                                                    <label for="edit_userAge" class="col-sm-2 control-label">商品名</label>
+                                                                    <label for="edit_goodsName" class="col-sm-2 control-label">商品名</label>
                                                                     <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="add_userVip" placeholder="商品名" name="uvip" >
+                                                                        <input type="text" class="form-control" id="add_goodsName" placeholder="商品名" name="goodsName" >
+                                                                    </div>
+                                                                </div>
+                                                                <%--<div class="form-group">--%>
+                                                                    <%--<label for="edit_" class="col-sm-2 control-label">创建时间</label>--%>
+                                                                    <%--<div class="col-sm-10">--%>
+                                                                        <%--<input type="datetime-local" class="form-control" id="add_createTime" placeholder="创建时间" name="createTime" >--%>
+                                                                    <%--</div>--%>
+                                                                <%--</div>--%>
+                                                                <%--<div class="form-group">--%>
+                                                                    <%--<label for="edit_payTime" class="col-sm-2 control-label">支付时间</label>--%>
+                                                                    <%--<div class="col-sm-10">--%>
+                                                                        <%--<input type="text" class="form-control" id="add_payTime" placeholder="支付时间" name="payTime" >--%>
+                                                                    <%--</div>--%>
+                                                                <%--</div>--%>
+                                                                <div class="form-group">
+                                                                    <label for="edit_totalPrice" class="col-sm-2 control-label">总价格</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control" id="add_totalPrice" placeholder="总价格" name="totalPrice" >
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -267,17 +319,42 @@
         }
         function addOperFunction() {
             return[
-//                '<button id="btn-edit" class="btn btn-primary">编辑</button>',
+                '<button id="btn-edit" class="btn btn-primary">编辑</button>',
                 '<button id="btn-delete" class="btn btn-danger">删除</button>'
             ].join(" ")
         };
 
 //        点击按钮会有事件
         window.operateEvents= {
+            "click #btn-edit": function (e,v,r,i) {
+                $.get(
+                    "order/"+r.oid,
+                    function (data) {
+                        $("#edit_oid").val(data.oid);
+                        $("#edit_orderNo").val(data.orderNo);
+                        $("#edit_userId").val(data.userId);
+                        $("#edit_userName").val(data.userName);
+                        $("#edit_payType").val(data.payType);
+                        $("#edit_totalPrice").val(data.totalPrice);
+                        $("#edit_orderState").val(data.orderState);
+                        $("#edit_createTime").val(data.createTime);
+                        $("#edit_payTime").val(data.payTime);
+                        $("#edit_supplierName").val(data.supplierName);
+                        $("#edit_deliveryType").val(data.deliveryType);
+                        $("#edit_goodsName").val(data.goodsName);
+                    },
+                    'json'
+                );
+                var dailog=$("#editModal").modal({
+                    backdrop:"static",
+                    keyboard:false
+                })
+                dailog.modal("show");
+            },
             "click #btn-delete": function (e,value,row,i) {
                 $.post(
                     'deleteOrder/'+row.oid,
-                    {'_method':'DELETE'},
+
                     function (data) {
                         if(data>0){
                             $("#ordertable").bootstrapTable(("refresh"),{pageNumber:data.pageNumber});

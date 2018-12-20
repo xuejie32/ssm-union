@@ -1,6 +1,7 @@
 package com.qf.admin.web;
 
 import com.alibaba.fastjson.JSONObject;
+import com.qf.admin.pojo.po.Order;
 import com.qf.admin.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,9 +13,8 @@ public class OrderAction {
     @Autowired
     OrderService orderService;
     @ResponseBody
-    @RequestMapping(value = "/deleteOrder/{oid}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/deleteOrder/{oid}",method = RequestMethod.POST)
     public int deleteOrder(@PathVariable("oid") int oid){
-        System.out.println(oid);
         int i=orderService.deleteOrder(oid);
         return i;
     }
@@ -22,8 +22,28 @@ public class OrderAction {
     @ResponseBody
     @RequestMapping(value = "/showAllOrders",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     public Object showAllOrders(@RequestBody JSONObject jsonObject){
+        System.out.println(jsonObject);
         jsonObject =orderService.getAllOrders(jsonObject);
+        System.out.println(jsonObject);
         return jsonObject;
     }
+    @PostMapping(value = "/addOrder")
+    public String addUser(Order order){
 
+        orderService.addOrder(order);
+
+        return "redirect:order";
+    }
+
+    @PostMapping("/updateOrder")
+    public String updateUser(Order order){
+        orderService.updateOrder(order);
+        return "redirect:order";
+    }
+    @ResponseBody
+    @GetMapping(value = "/order/{oid}")
+    public Order getOrder(@PathVariable("oid") int oid){
+        Order order=orderService.getOrder(oid);
+        return order;
+    }
 }
