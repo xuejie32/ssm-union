@@ -6,13 +6,37 @@ public class Staff {
     private int sage;
     private int ssex;
     private String saddress;
+    private String simage;
 
-    public Staff(int sid, String sname, int sage, int ssex, String saddress) {
+    @Override
+    public String toString() {
+        return "Staff{" +
+                "sid=" + sid +
+                ", sname='" + sname + '\'' +
+                ", sage=" + sage +
+                ", ssex=" + ssex +
+                ", saddress='" + saddress + '\'' +
+                ", simage='" + simage + '\'' +
+                '}';
+    }
+
+    public String getSimage() {
+        return simage;
+    }
+
+    public void setSimage(String simage) {
+        this.simage = simage;
+    }
+
+
+
+    public Staff(int sid, String sname, int sage, int ssex, String saddress,String simage) {
         this.sid = sid;
         this.sname = sname;
         this.sage = sage;
         this.ssex = ssex;
         this.saddress = saddress;
+        this.simage = simage;
     }
 
     public Staff() {
@@ -58,14 +82,4 @@ public class Staff {
         this.saddress = saddress;
     }
 
-    @Override
-    public String toString() {
-        return "Staff{" +
-                "sid=" + sid +
-                ", sname='" + sname + '\'' +
-                ", sage=" + sage +
-                ", ssex=" + ssex +
-                ", saddress='" + saddress + '\'' +
-                '}';
-    }
 }

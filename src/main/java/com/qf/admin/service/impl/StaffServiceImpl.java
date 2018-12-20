@@ -66,4 +66,14 @@ public class StaffServiceImpl implements StaffService {
         }
         return i;
     }
+    @Override
+    public List<Staff> webShowStaff(){
+        List<Staff> liststaff=null;
+        try{
+            liststaff=staffDao.webShowStaff();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return liststaff;
+    }
 }

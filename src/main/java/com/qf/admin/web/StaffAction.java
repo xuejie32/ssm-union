@@ -5,7 +5,10 @@ import com.qf.admin.pojo.po.Staff;
 import com.qf.admin.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class StaffAction {
@@ -39,5 +42,13 @@ public class StaffAction {
     public String addstaff(Staff staff){
         staffService.addstaff(staff);
         return "redirect:staff";
+    }
+
+    @RequestMapping(value = "/webShowStaff",method = RequestMethod.GET)
+    public String webShowStaff(Model model){
+        List<Staff> liststaff=staffService.webShowStaff();
+        System.out.println(liststaff);
+        model.addAttribute("staff",liststaff);
+        return "staffweb";
     }
 }

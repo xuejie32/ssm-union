@@ -12,4 +12,5 @@ public interface StaffService {
     int updatestaff(Staff staff);
     int delete(int sid);
     int addstaff(Staff staff);
+    List<Staff> webShowStaff();
 }

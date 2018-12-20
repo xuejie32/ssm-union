@@ -33,4 +33,7 @@
     <insert id="addstaff" parameterType="com.qf.admin.pojo.po.Staff">
         INSERT into tb_staff(sname,sage,ssex,saddress) values(#{sname},#{sage},#{ssex},#{saddress})
     </insert>
+    <select id="webShowStaff" resultType="com.qf.admin.pojo.po.Staff">
+        SELECT sid,sname,sage,ssex,saddress,simage from tb_staff
+    </select>
 </mapper>
