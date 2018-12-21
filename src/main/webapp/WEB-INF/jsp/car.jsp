@@ -301,7 +301,11 @@
                 field: "pimage",
                 title: "商品图片",
                 formatter: function (e,v,r,i) {
-                    return ["<img src='"+r.pimage+"' height='82px' width='82px'/>"].join("");
+//                    return ["<img src='"+row.pimage+"' height='82px' width='82px'/>"].join("");
+//                }
+                    return [
+                        '<img  src="' + v.pimage + '" width="80px" height="80px"></img>'
+                    ];
                 }
             },{
                 field: "count",
