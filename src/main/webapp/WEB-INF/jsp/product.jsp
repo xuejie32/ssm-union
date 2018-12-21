@@ -149,7 +149,10 @@
                                商品价钱<input type="text" name="price" class="form-control" id="price"/>
                                商品介绍<input type="text" name="pdesc" class="form-control" id="pdesc"/>
                                是否热门<input type="text" name="isHot" class="form-control" id="isHot"/>
-                               商品图片<input type="file" name="file">
+
+                               商品图片</br>
+                               <img src="" name="pimage" id="pimage" width="80px" height="80px">
+                               <input type="file" name="file">
                            </div>
                            <div class="modal-footer">
                                <input type="submit" class="btn btn-primary"/>
@@ -288,6 +291,7 @@
                         $("#price").val(row.price);
                         $("#pdesc").val(row.pdesc);
                         $("#isHot").val(row.isHot);
+                        $("#pimage").attr("src",row.pimage);
                     },
                     'click #btn_delete':function (e,value,row,index) {
                         if(confirm("确定删除吗")){

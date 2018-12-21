@@ -30,7 +30,10 @@
     </insert>
 
     <update id="updateProduct" parameterType="com.qf.admin.pojo.po.Product">
-        UPDATE tb_product SET pname=#{pname},price=#{price},pdesc=#{pdesc},pimage=#{pimage},isHot=#{isHot}
+        UPDATE tb_product SET pname=#{pname},price=#{price},pdesc=#{pdesc},isHot=#{isHot}
+        <if test="pimage!= null">
+            ,pimage=#{pimage}
+        </if>
         WHERE pid=#{pid}
     </update>
 
