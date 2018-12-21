@@ -142,13 +142,14 @@
                            </button>
                            <h4 class="modal-title" >修改商品信息</h4>
                        </div>
-                       <form action="updateProduct" method="post">
+                       <form action="updateProduct" method="post" enctype="multipart/form-data">
                            <div class="modal-body">
                                <input type="hidden" name="pid" id="pid"/>
                                商品名称<input type="text" name="pname" class="form-control" id="pname"/>
                                商品价钱<input type="text" name="price" class="form-control" id="price"/>
                                商品介绍<input type="text" name="pdesc" class="form-control" id="pdesc"/>
                                是否热门<input type="text" name="isHot" class="form-control" id="isHot"/>
+                               商品图片<input type="file" name="file">
                            </div>
                            <div class="modal-footer">
                                <input type="submit" class="btn btn-primary"/>

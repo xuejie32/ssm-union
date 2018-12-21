@@ -72,11 +72,38 @@ public class ProductAction {
         /**
          * 修改商品
          */
+//    @PostMapping("/updateProduct")
+//    public String update(Product p){
+//        int i=ser.updateProduct(p);
+//        return "redirect:product";
+//    }
+
     @PostMapping("/updateProduct")
-    public String update(Product p){
+    public String update(HttpServletRequest request, @RequestParam("file")MultipartFile file , Product p ) throws IOException {
+        if (!file.isEmpty()) {
+            String path = request.getServletContext().getRealPath("/photo/");
+            String filename = file.getOriginalFilename();
+            //String newFilename="/images/"+filename;
+            //获取file对象
+            File filePath = new File(path, filename);
+            //判断路径是否存在,不存在就创建一个
+            if (!filePath.getParentFile().exists()) {
+                filePath.getParentFile().mkdirs();
+            }
+            //将上传文件保存在一个目标文件中
+            try {
+                file.transferTo(new File(path + File.separator + filename));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            String newFilename = "photo/" + filename;
+            p.setPimage(newFilename);
+            System.out.println(newFilename);
+        }
         int i=ser.updateProduct(p);
         return "redirect:product";
     }
+
 
     /**
      * 删除商品
