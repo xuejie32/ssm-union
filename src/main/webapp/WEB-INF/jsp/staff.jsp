@@ -162,9 +162,9 @@
                                                                     <label for="add_staffSex" class="col-sm-2 control-label">性  别</label>
                                                                     <%-- <div class="col-sm-10">--%>
                                                                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                                    <input type="radio" <%--class="form-control"--%> id="edit_staffSex" name="ssex" value="1">男
+                                                                    <input type="radio" <%--class="form-control"--%> id="edit_ssex" name="ssex" value="1">男
                                                                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                                    <input type="radio" <%--class="form-control"--%> id="edit_staffSex" name="ssex" value="0">女
+                                                                    <input type="radio" <%--class="form-control"--%>id="edit_ssex" name="ssex" value="0">女
                                                                     <%--  </div>--%>
                                                                 </div>
                                                                 <div class="form-group">
@@ -199,7 +199,7 @@
                                                             </button>
                                                             <h4 class="modal-title" id="myModalStudent">请输入新增员工信息</h4>
                                                         </div>
-                                                        <form class="form-horizontal" id="add_Student_form" method="post" action="addstaff">
+                                                        <form class="form-horizontal" id="add_Student_form" method="post" action="addstaff" enctype="multipart/form-data">
                                                             <div class="modal-body">
                                                                 <div class="form-group">
                                                                     <label for="add_staffName" class="col-sm-2 control-label" >姓   名</label>
@@ -226,6 +226,12 @@
                                                                     <label for="add_staffaddress" class="col-sm-2 control-label">地址</label>
                                                                     <div class="col-sm-10">
                                                                         <input type="text" class="form-control" id="add_staffaddress" placeholder="地址" name="saddress" >
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="add_staffaddress" class="col-sm-2 control-label">图片</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="file" name="file">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -274,9 +280,12 @@
                     $.get(
                         "toUpdateStaff/"+r.sid,
                         function(d){
+                            //alert($('#edit_staffSex [value='+d.ssex+']'))
                             $("#edit_staffId").val(d.sid);
                             $("#edit_staffName").val(d.sname);
-                            $("#edit_staffSex:checked").val(d.ssex);
+                            //$('#editForm [type=radio][value='+d.sex+']').attr('check',true);
+
+                            $('#edit_Student_form [type=radio][value='+d.ssex+']').attr('checked',true);
                             $("#edit_staffAge").val(d.sage);
                             $("#edit_staffAddress").val(d.saddress);
                         },
