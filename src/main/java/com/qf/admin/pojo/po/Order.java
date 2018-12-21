@@ -1,6 +1,10 @@
 package com.qf.admin.pojo.po;
 
+import java.sql.Date;
 import java.sql.Timestamp;
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
+import java.util.logging.SimpleFormatter;
 
 public class Order {
     String typeName;
@@ -12,29 +16,31 @@ public class Order {
     int payType;
     double totalPrice;
     int orderState;
-    Timestamp createTime;
+    String createTime ;
+    String payTime;
 
-    public Timestamp getCreateTime() {
+
+    private SimpleDateFormat
+            sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    String supplierName;
+    String deliveryType;
+    String goodsName;
+
+    public String getCreateTime() {
         return createTime;
     }
 
-    public Timestamp getPayTime() {
-        return payTime;
-    }
-
-    Timestamp payTime;
-    String supplierName;
-
-    public void setCreateTime(Timestamp createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
-    public void setPayTime(Timestamp payTime) {
-        this.payTime = payTime;
+    public String getPayTime() {
+        return payTime;
     }
 
-    String deliveryType;
-    String goodsName;
+    public void setPayTime(String payTime) {
+        this.payTime = payTime;
+    }
 
     public String getTypeName() {
         return typeName;

@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @Controller
 public class OrderAction {
     @Autowired
@@ -28,6 +31,12 @@ public class OrderAction {
     @PostMapping(value = "/addOrder")
     public String addUser(Order order){
 
+        Date day=new Date();
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        order.setCreateTime(df.format(System.currentTimeMillis()));
+        order.setPayTime(df.format(System.currentTimeMillis()));
         orderService.addOrder(order);
 
         return "redirect:order";
@@ -50,6 +59,7 @@ public class OrderAction {
     @RequestMapping(value = "/showOrders",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     public Object showOrders(@RequestBody JSONObject jsonObject){
         jsonObject =orderService.getAllOrders(jsonObject);
+        System.out.println(jsonObject);
         return jsonObject;
     }
 }
