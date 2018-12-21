@@ -44,7 +44,7 @@ public class StaffAction {
     @PostMapping("/addstaff")
     public String addstaff(Staff staff, HttpServletRequest request, @RequestParam("file")MultipartFile file){
         if (!file.isEmpty()){
-            String path = request.getServletContext().getRealPath("/photo/img/");
+            String path = request.getServletContext().getRealPath("/photo/");
             String filename = file.getOriginalFilename();
             //String newFilename="/images/"+filename;
             //获取file对象
