@@ -30,21 +30,22 @@ public class OrderAction {
     }
     @PostMapping(value = "/addOrder")
     public String addUser(Order order){
-
         Date day=new Date();
 
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-        order.setCreateTime(df.format(System.currentTimeMillis()));
-        order.setPayTime(df.format(System.currentTimeMillis()));
+        order.setCreateTime(df.format(day));
+        order.setPayTime(df.format(day));
         orderService.addOrder(order);
 
         return "redirect:order";
+
     }
 
     @PostMapping("/updateOrder")
     public String updateUser(Order order){
         System.out.println(order.getUserId());
+
         orderService.updateOrder(order);
         return "redirect:order";
     }
@@ -59,7 +60,6 @@ public class OrderAction {
     @RequestMapping(value = "/showOrders",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     public Object showOrders(@RequestBody JSONObject jsonObject){
         jsonObject =orderService.getAllOrders(jsonObject);
-        System.out.println(jsonObject);
         return jsonObject;
     }
 }

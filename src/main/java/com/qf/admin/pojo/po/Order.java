@@ -1,10 +1,6 @@
 package com.qf.admin.pojo.po;
 
-import java.sql.Date;
 import java.sql.Timestamp;
-import java.text.ParsePosition;
-import java.text.SimpleDateFormat;
-import java.util.logging.SimpleFormatter;
 
 public class Order {
     String typeName;
@@ -16,15 +12,18 @@ public class Order {
     int payType;
     double totalPrice;
     int orderState;
-    String createTime ;
+    String createTime;
+
+
+
     String payTime;
-
-
-    private SimpleDateFormat
-            sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     String supplierName;
+
+
+
     String deliveryType;
     String goodsName;
+
 
     public String getCreateTime() {
         return createTime;
@@ -151,8 +150,8 @@ public class Order {
                 ", payType=" + payType +
                 ", totalPrice=" + totalPrice +
                 ", orderState=" + orderState +
-                ", createTime=" + createTime +
-                ", payTime=" + payTime +
+                ", createTime='" + createTime + '\'' +
+                ", payTime='" + payTime + '\'' +
                 ", supplierName='" + supplierName + '\'' +
                 ", deliveryType='" + deliveryType + '\'' +
                 ", goodsName='" + goodsName + '\'' +

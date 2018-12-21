@@ -40,7 +40,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="brand">
-            <a href="index.html"><img src="assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+            <a href="#"><img src="assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
         </div>
         <div class="container-fluid">
             <div class="navbar-btn">
@@ -114,15 +114,16 @@
                            </button>
                            <h4 class="modal-title" id="myModalLabel">新增商品信息</h4>
                        </div>
-                       <form action="saveProduct" method="post">
+                       <form action="saveProduct" method="post" enctype="multipart/form-data">
                            <div class="modal-body">
                                商品名称<input type="text" name="pname" class="form-control" placeholder="请在这里输入商品名称"/>
                                商品价钱<input type="text" name="price" class="form-control" placeholder="请在这里输入商品价钱"/>
                                商品介绍<input type="text" name="pdesc" class="form-control" placeholder="请在这里输入商品介绍"/>
                                是否热门<input type="text" name="isHot" class="form-control" placeholder="请在这里输入是否热门"/>
+                               商品图片<input type="file" name="file">
                            </div>
                            <div class="modal-footer">
-                               <input type="submit" class="btn btn-primary"/>
+                               <input type="submit" class="btn btn-primary" />
                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
 
                            </div>

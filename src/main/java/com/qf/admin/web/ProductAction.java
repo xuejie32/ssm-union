@@ -8,7 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -33,16 +37,41 @@ public class ProductAction {
     /**
      * 新增商品
      */
+//    @PostMapping("/saveProduct")
+//    public String addProduct(Product p){
+//        int i=ser.addProduct(p);
+//        System.out.println(i);
+//        return "redirect:product";
+//    }
+
     @PostMapping("/saveProduct")
-    public String addProduct(Product p){
+    public String upload(HttpServletRequest request, @RequestParam("file")MultipartFile file , Product p ) throws IOException {
+        if (!file.isEmpty()) {
+            String path = request.getServletContext().getRealPath("/photo/");
+            String filename = file.getOriginalFilename();
+            //String newFilename="/images/"+filename;
+            //获取file对象
+            File filePath = new File(path, filename);
+            //判断路径是否存在,不存在就创建一个
+            if (!filePath.getParentFile().exists()) {
+                filePath.getParentFile().mkdirs();
+            }
+            //将上传文件保存在一个目标文件中
+            try {
+                file.transferTo(new File(path + File.separator + filename));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            String newFilename = "photo/" + filename;
+            p.setPimage(newFilename);
+        }
         int i=ser.addProduct(p);
         System.out.println(i);
         return "redirect:product";
     }
-
-    /**
-     * 修改商品
-     */
+        /**
+         * 修改商品
+         */
     @PostMapping("/updateProduct")
     public String update(Product p){
         int i=ser.updateProduct(p);
@@ -65,6 +94,6 @@ public class ProductAction {
     public String AllProduct(Model model){
        List<Product> list= ser.AllProduct();
        model.addAttribute("products",list);
-        return "AllProduct";
+        return "store";
     }
 }

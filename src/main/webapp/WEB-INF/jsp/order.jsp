@@ -28,7 +28,6 @@
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css">
-    <link href="assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 
 </head>
 
@@ -38,7 +37,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="brand">
-            <a href="index.html"><img src="assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+            <a href="#"><img src="assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
         </div>
         <div class="container-fluid">
             <div class="navbar-btn">
@@ -252,28 +251,16 @@
                                                                         <input type="text" class="form-control" id="add_goodsName" placeholder="商品名" name="goodsName" >
                                                                     </div>
                                                                 </div>
-                                                                <div class="form-group">
-                                                                    <label for="add_payType" class="col-sm-2 control-label">支付方式</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="add_payType" placeholder="商品名" name="goodsName" >
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="add_orderState" class="col-sm-2 control-label">支付状态</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="text" class="form-control" id="add_orderState" placeholder="商品名" name="goodsName" >
-                                                                    </div>
-                                                                </div>
                                                                 <%--<div class="form-group">--%>
-                                                                    <%--<label for="add_createTime" class="col-sm-2 control-label">创建时间</label>--%>
+                                                                    <%--<label for="edit_" class="col-sm-2 control-label">创建时间</label>--%>
                                                                     <%--<div class="col-sm-10">--%>
-                                                                        <%--<input type="text" class="form-control" id="add_createTime" placeholder="创建时间" name="createTimeStr" >--%>
+                                                                        <%--<input type="datetime-local" class="form-control" id="add_createTime" placeholder="创建时间" name="createTime" >--%>
                                                                     <%--</div>--%>
                                                                 <%--</div>--%>
                                                                 <%--<div class="form-group">--%>
-                                                                    <%--<label for="add_createTime" class="col-sm-2 control-label">支付时间</label>--%>
+                                                                    <%--<label for="edit_payTime" class="col-sm-2 control-label">支付时间</label>--%>
                                                                     <%--<div class="col-sm-10">--%>
-                                                                        <%--<input type="text" class="form-control" id="add_payTime" placeholder="支付时间" name="payTimeStr" >--%>
+                                                                        <%--<input type="text" class="form-control" id="add_payTime" placeholder="支付时间" name="payTime" >--%>
                                                                     <%--</div>--%>
                                                                 <%--</div>--%>
                                                                 <div class="form-group">
@@ -312,28 +299,25 @@
 <script src="assets/scripts/klorofil-common.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/locale/bootstrap-table-zh-CN.min.js"></script>
-<script src="assets/js/moment-with-locales.js"></script>
-<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
-<script src="assets/js/bootstrap-datetimepicker.zh-CN.js"></script>
 
 </body>
 <script>
     $(function () {
-//        //转换日期格式(时间戳转换为datetime格式)
-//        function changeDateFormat(cellval) {
-//            var dateVal = cellval + "";
-//            if (cellval != null) {
-//                var date = new Date(parseInt(dateVal.replace("/Date(", "").replace(")/", ""), 10));
-//                var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
-//                var currentDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
-//
-//                var hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
-//                var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-//                var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
-//
-//                return date.getFullYear() + "-" + month + "-" + currentDate + " " + hours + ":" + minutes + ":" + seconds;
-//            }
-//        }
+        //转换日期格式(时间戳转换为datetime格式)
+        function changeDateFormat(cellval) {
+            var dateVal = cellval + "";
+            if (cellval != null) {
+                var date = new Date(parseInt(dateVal.replace("/Date(", "").replace(")/", ""), 10));
+                var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                var currentDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+
+                var hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+                var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+                var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+
+                return date.getFullYear() + "-" + month + "-" + currentDate + " " + hours + ":" + minutes + ":" + seconds;
+            }
+        }
         function addOperFunction() {
             return[
                 '<button id="btn-edit" class="btn btn-primary">编辑</button>',
@@ -374,7 +358,7 @@
 
                     function (data) {
                         if(data>0){
-                            $("#ordertable").bootstrapTable(("refresh"),{pageNumber:data.pageNumber});
+                            $("#ordertable").bootstrapTable(("refresh"),{pageNumber:1});
                         }
                     },
                     'json'
@@ -415,8 +399,8 @@
             },{
                 field:'createTime',
                 title:'创建时间',
-//                sortable: true,
-//                //——修改——获取日期列的值进行转换
+                sortable: true,
+                //——修改——获取日期列的值进行转换
 //                formatter: function (value, row, i) {
 //                    return changeDateFormat(value)
 //                }

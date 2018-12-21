@@ -239,9 +239,9 @@
                                                 <div class="cell p-quantity">
                                                     <!-- 满减 -->
                                                     <div class="quantity-form" promoid="15347433710">
-                                                        <a href="javascript:void(0);" clstag="clickcart|keycount|xincart|cart_num_down" class="decrement disabled" id="decrement_656567_32225539848_1_11_15347433710">-</a>
+
                                                         <input autocomplete="off" type="text" class="itxt" value=${p.count} id="changeQuantity_656567_32225539848_1_11_0_15347433710" minnum="1">
-                                                        <a href="javascript:void(0);" clstag="clickcart|keycount|xincart|cart_num_up" class="increment" id="increment_656567_32225539848_1_11_0_15347433710">+</a>
+
                                                     </div>
                                                     <div class="ac ftx-03 quantity-txt" _stock="stock_32225539848">有货</div>
                                                 </div>
@@ -250,9 +250,7 @@
                                                 </div>
                                                 <div class="cell p-ops">
                                                     <!-- 满减 -->
-                                                    <a id="remove_656567_32225539848_11_15347433710" clstag="clickcart|keycount|xincart|cart_sku_del" data-name="2件减10元】金骏眉 红茶 茶叶 礼盒装18罐27..." data-more="removed_68.00_1" class="cart-remove" href="javascript:void(0);">删除</a>
-                                                    <a href="javascript:void(0);" class="cart-follow" id="follow_656567_32225539848_11_15347433710" clstag="clickcart|keycount|xincart|cart_sku_guanzhu">移到我的关注</a>
-                                                    <a href="javascript:void(0);" class="add-follow" id="add-follow_32225539848" clstag="pageclick|keycount|cart_201610202|32">加到我的关注</a>
+
                                                 </div>
                                             </div>
                                             <div class="item-extra mb10">

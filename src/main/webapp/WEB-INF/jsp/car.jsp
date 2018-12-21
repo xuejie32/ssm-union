@@ -30,7 +30,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="brand">
-            <a href="index.html"><img src="assets/img/logo-dark.png" alt="Klorofil Logo"
+            <a href="#"><img src="assets/img/logo-dark.png" alt="Klorofil Logo"
                                       class="img-responsive logo"></a>
         </div>
         <div class="container-fluid">
@@ -155,7 +155,7 @@
                                                                        class="col-sm-2 control-label">用户id</label>
                                                                 <div class="col-sm-10">
                                                                     <input type="text" class="form-control" id="uid"
-                                                                           placeholder="姓名" name="uid" value="">
+                                                                           placeholder="用户id" name="uid" value="">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -163,7 +163,7 @@
                                                                        class="col-sm-2 control-label">商品id</label>
                                                                 <div class="col-sm-10">
                                                                     <input type="text" class="form-control" id="pid"
-                                                                           placeholder="性别" name="pid" value="">
+                                                                           placeholder="商品id" name="pid" value="">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -171,7 +171,7 @@
                                                                        class="col-sm-2 control-label">商品数量</label>
                                                                 <div class="col-sm-10">
                                                                     <input type="text" class="form-control" id="count"
-                                                                           placeholder="年龄" name="count"
+                                                                           placeholder="数量" name="count"
                                                                            value="${user.uage}">
                                                                 </div>
                                                             </div>
@@ -207,7 +207,7 @@
                                                                        class="col-sm-2 control-label">用户id</label>
                                                                 <div class="col-sm-10">
                                                                     <input type="text" class="form-control" id="uid1"
-                                                                           placeholder="姓名" name="uid" value="">
+                                                                           placeholder="用户id" name="uid" value="">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -215,7 +215,7 @@
                                                                        class="col-sm-2 control-label">商品id</label>
                                                                 <div class="col-sm-10">
                                                                     <input type="text" class="form-control" id="pid1"
-                                                                           placeholder="性别" name="pid" value="">
+                                                                           placeholder="商品id" name="pid" value="">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -223,7 +223,7 @@
                                                                        class="col-sm-2 control-label">商品数量</label>
                                                                 <div class="col-sm-10">
                                                                     <input type="text" class="form-control" id="count1"
-                                                                           placeholder="年龄" name="count" value="">
+                                                                           placeholder="数量" name="count" value="">
                                                                 </div>
                                                             </div>
                                                         </div>

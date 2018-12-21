@@ -247,18 +247,18 @@
                 title:'创建时间',
                 sortable: true,
                 //——修改——获取日期列的值进行转换
-                formatter: function (value, row, i) {
-                    return changeDateFormat(value)
-                }
+//                formatter: function (value, row, i) {
+//                    return changeDateFormat(value)
+//                }
 
             },{
                 field:'payTime',
                 title:'支付时间',
                 sortable: true,
                 //——修改——获取日期列的值进行转换
-                formatter: function (value, row, i) {
-                    return changeDateFormat(value)
-                }
+//                formatter: function (value, row, i) {
+//                    return changeDateFormat(value)
+//                }
             },{
                 field:'deliveryType',
                 title:'配送类型'

@@ -45,7 +45,7 @@ public class ProductServiceImpl implements ProductService {
     public int addProduct(Product p) {
 
         try {
-            p.setPimage("photo/xuejie8.jpg");
+
             p.setPdate(new Date());
             System.out.println(p.getPdate());
             return dao.addProduct(p);
