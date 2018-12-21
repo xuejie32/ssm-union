@@ -3,6 +3,16 @@ package com.qf.admin.pojo;
 public class CarVO1 {
     private int uid;
     private int pid;
+    private int cid;
+
+    public int getCid() {
+        return cid;
+    }
+
+    public void setCid(int cid) {
+        this.cid = cid;
+    }
+
     private String pname;
     private String price;
     private String pdesc;

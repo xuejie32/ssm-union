@@ -12,12 +12,15 @@ import java.util.List;
 
 @Repository
 public interface CarDao {
-    @Select("<script>select * from tb_car"+
+    @Select("<script>select" +
+            " pdesc,count,pname,price,pimage,cid,uid,tb_car.pid" +
+            " from tb_car,tb_product"+
            "<if test=\"search!=null and search!=''\">" +
-                "where cid=#{search}" +
+                " where cid=#{search}" +
             "</if>" +
+            " <where> tb_car.pid=tb_product.pid</where>" +
             " limit #{offset},#{limit}</script>")
-    List<Car> getCar(JSONObject obj);
+    List<CarVO1> getCar(JSONObject obj);
     @Update("insert into tb_car(uid,pid,count) values(#{uid},#{pid},#{count})")
     void addCar(Car car);
     @Update("update tb_car set uid=#{uid},pid=#{pid},count=#{count} where cid=#{cid}")
@@ -26,10 +29,11 @@ public interface CarDao {
     void delCar(Car car);
     @Select("select * from tb_car where cid=#{cid}")
     Car getCarByCid(Car car);
-    @Select("<script>select count(*) from tb_car"+
+    @Select("<script>select count(*) from tb_car,tb_product"+
             "<if test=\"search!=null and search!=''\">" +
             "where cid=#{search}" +
-            "</if></script>")
+            "</if> <where> tb_car.pid=tb_product.pid</where>" +
+            " limit #{offset},#{limit}</script>")
     int getCarCount(JSONObject obj);
     @Select("select pdesc,count,pname,price,pimage from tb_product p,(select * from tb_car where uid = ${uid})" +
             " c where p.pid = c.pid")

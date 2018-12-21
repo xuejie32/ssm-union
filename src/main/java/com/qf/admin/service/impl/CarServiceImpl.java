@@ -15,7 +15,7 @@ public class CarServiceImpl implements CarService {
     private CarDao carDao;
     @Override
     public JSONObject getCar(JSONObject obj) {
-        List<Car> list = carDao.getCar(obj);
+        List<CarVO1> list = carDao.getCar(obj);
         int total = carDao.getCarCount(obj);
         obj.put("rows",list);
         obj.put("total",total);

@@ -274,7 +274,7 @@
             showColumns: true,
             striped: true,
             pagination: true,
-            height:300,
+            height:500,
             pageNumber: 1,
             pageSize: 3,
             search: true,
@@ -292,9 +292,21 @@
                 field: "pid",
                 title: "商品id"
             }, {
+                field: "pname",
+                title: "商品名称"
+            }, {
+                field: "pdesc",
+                title: "商品介绍"
+            }, {
+                field: "pimage",
+                title: "商品图片",
+                formatter: function (e,v,r,i) {
+                    return ["<img src='"+r.pimage+"' height='82px' width='82px'/>"].join("");
+                }
+            },{
                 field: "count",
                 title: "商品数量"
-            }, {
+            },{
                 title: '操作',
                 align: 'center',
                 formatter: function () {
